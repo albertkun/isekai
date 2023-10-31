@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Isekai Title Generator</title>
+</head>
+<body>
+    <h1>Random Isekai Title Generator</h1>
+    <button id="generate">Generate</button>
+    <p id="title"></p>
+
+    <script>
+        const beginnings = ["Reborn as a", "I Became a", "Transported to Another World, I Am", "Living as a", "My Life as a", "Stuck in a Game, I Became", "Waking up as a", "My Adventure as a", "My Second Life as a", "Becoming a"];
+        const middles = ["Slime", "Sword", "Prince", "Merchant", "Dragon", "Butler", "Villainess", "Farmer", "God", "Demon Lord", "Knight", "Wizard", "Chef", "Blacksmith", "Adventurer", "Hero", "Vampire", "Elf", "Beast Tamer", "Guild Master"];
+        const ends = ["in a Fantasy World", "With a Second Chance", "With My Smartphone", "and Found Love", "and Became a Hero", "With Only My Knowledge", "and a Harem", "With No Cheat Skills", "and a Magic Sword", "in a World of Magic", "in a Game World", "With a Powerful Artifact", "and a Loyal Party", "With a Level Cap", "With My Past Memories", "to Battle Against the Demon King", "With a Time Limit", "and a Mysterious Power", "in a World Similar to an RPG"];
+
+        document.getElementById('generate').addEventListener('click', function() {
+            const title = `${randomElement(beginnings)} ${randomElement(middles)} ${randomElement(ends)}`;
+            document.getElementById('title').textContent = title;
+        });
+    
+        function randomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+    </script>
+</body>
+</html>
