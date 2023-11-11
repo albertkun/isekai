@@ -112,7 +112,7 @@ body > * {
         document.getElementById('twitterButton').addEventListener('click', function() {
             var titleDiv = document.getElementById('title');
             var textToTweet = titleDiv.textContent || titleDiv.innerText;
-            var twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(textToTweet);
+            var twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(textToTweet + " | Check out the generator here: https://github.com/albertkun/test");
             window.open(twitterUrl, '_blank');
         });
 </script>
