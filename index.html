@@ -3,6 +3,73 @@
 <head>
     <title>Random Isekai Title Generator</title>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+        background-color: #F5F5F5;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        color: #FF4081;
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #FF4081;
+        color: #FFF;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+    button:hover {
+        background-color: #E91E63;
+    }
+
+    p {
+        font-size: 1.5em;
+        text-align: center;
+    }
+</style>
+<style>
+    /* Your existing CSS goes here */
+
+    /* CSS for screens smaller than 600px wide */
+    @media (max-width: 600px) {
+        body {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
+</style>
 <body>
     <h1>Random Isekai Title Generator</h1>
     <button id="generate">Generate</button>
@@ -22,5 +89,15 @@
             return array[Math.floor(Math.random() * array.length)];
         }
     </script>
+    <button id="twitterButton">Share on Twitter</button>
+
+    <script>
+        document.getElementById('twitterButton').addEventListener('click', function() {
+            var titleDiv = document.getElementById('title');
+            var textToTweet = titleDiv.textContent || titleDiv.innerText;
+            var twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(textToTweet);
+            window.open(twitterUrl, '_blank');
+        });
+</script>
 </body>
 </html>
